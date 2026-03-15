@@ -1,0 +1,13 @@
+# MIT License
+# Author: Inari Solutions Sp. z o.o.
+# Project notice: Demonstration code prepared for a hackathon.
+# Production notice: This code is not ready for production use.
+# File role: Python dependencies for the backend service.
+azure-identity>=1.15.0
+# Install the preview version of the projects SDK with:
+#   pip install --pre azure-ai-projects>=2.0.0b1
+azure-ai-projects>=2.0.0b1
+requests>=2.31.0
+fastapi>=0.110.0
+uvicorn>=0.24.0
+fastmcp>=3.1.0

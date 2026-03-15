@@ -1,0 +1,298 @@
+<!--
+  MIT License
+  Author: Inari Solutions Sp. z o.o.
+  Project notice: Demonstration code prepared for a hackathon.
+  Production notice: This code is not ready for production use.
+  File role: Frontend document shell for the AI Data Explorer UI.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Data Explorer for EU</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========== LANDING SECTIONS ========== -->
+  <div id="landingView">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">
+            <img src="assets/images/logo_xs.png" alt="AIDEEU logo" width="32" height="32">
+          </div>
+          <span class="navbar-title">AI Data Explorer <span class="navbar-title-eu">EU</span></span>
+        </a>
+        <div class="navbar-links">
+          <a href="#how-it-works" class="nav-link">How It Works</a>
+          <a href="https://data.europa.eu" target="_blank" rel="noopener" class="nav-link">Data Portal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <!-- Floating geometric decorations -->
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          Powered by Azure AI Agent Service
+        </div>
+        <h1 class="hero-title">
+          Unlock Europe's Public Data<br>
+          <span class="hero-title-accent">in Seconds</span>
+        </h1>
+        <p class="hero-subtitle">
+          Over 1.5 million EU datasets sit unused because they're hard to find. Our AI agent bridges that gap. Ask a question in plain language, get structured, summarized results from the EU Open Data Portal. No technical expertise required.
+        </p>
+
+        <!-- Stat Cards -->
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="stat-value">1M+</div>
+            <div class="stat-label">Datasets</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="stat-value">27</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.09 3.26L16.36 6l-3.27 1.09L12 10.36l-1.09-3.27L7.64 6l3.27-1.09L12 2z"/><path d="M18 12l.6 1.82L20.42 14.4l-1.82.58L18 16.82l-.6-1.82-1.82-.6 1.82-.58L18 12z"/><path d="M7 14l.75 2.25L10 17l-2.25.75L7 20l-.75-2.25L4 17l2.25-.75L7 14z"/></svg>
+            </div>
+            <div class="stat-value">AI</div>
+            <div class="stat-label">Powered</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section id="search-section" class="search-section">
+      <div class="search-backdrop"></div>
+
+      <p class="search-helper-text">Ask anything about European public datasets</p>
+
+      <form id="landingSearchForm" class="search-bar">
+        <div class="search-icon">
+          <img src="assets/images/logo_xs.png" alt="AIDEE" width="38" height="38">
+        </div>
+        <input id="landingSearchInput" type="text" class="search-input" placeholder="Which EU countries spend the most on renewable energy?">
+        <button id="landingSearchBtn" type="submit" class="search-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Search
+        </button>
+      </form>
+
+      <div class="search-chips">
+        <button type="button" class="search-chip" data-query="How do EU countries rank on gender pay gap and workforce participation?">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Gender equality
+        </button>
+        <button type="button" class="search-chip" data-query="Show me air pollution levels across European capitals">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Air pollution
+        </button>
+        <button type="button" class="search-chip" data-query="What are municipal waste recycling rates by EU country in 2023?">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Waste recycling
+        </button>
+        <button type="button" class="search-chip" data-query="How much do EU governments spend on environmentally certified procurement?">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Green procurement
+        </button>
+      </div>
+    </section>
+
+    <!-- Credibility Bar -->
+    <div class="credibility-bar">
+      <p class="credibility-text">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Data sourced from <a href="https://data.europa.eu" target="_blank" rel="noopener">data.europa.eu</a> &mdash; the official European Data Portal
+      </p>
+    </div>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-section">
+      <h2 class="how-title">How It Works</h2>
+      <p class="how-subtitle">Four simple steps from question to insight</p>
+      <div class="how-cards">
+        <div class="how-card">
+          <span class="how-step-number" aria-hidden="true">1</span>
+          <div class="how-icon how-icon-blue" aria-hidden="true">&#x1F4AC;</div>
+          <h3 class="how-card-title">Ask Naturally</h3>
+          <p class="how-card-text">Type your question in plain language &mdash; no SPARQL or technical queries needed.</p>
+        </div>
+        <div class="how-card-connector" aria-hidden="true">
+          <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M0 7h18m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="how-card">
+          <span class="how-step-number" aria-hidden="true">2</span>
+          <div class="how-icon how-icon-yellow" aria-hidden="true">&#x26A1;</div>
+          <h3 class="how-card-title">AI Refine</h3>
+          <p class="how-card-text">Our AI agent discusses with you to understand your intentions and narrow down the perfect datasets.</p>
+        </div>
+        <div class="how-card-connector" aria-hidden="true">
+          <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M0 7h18m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="how-card">
+          <span class="how-step-number" aria-hidden="true">3</span>
+          <div class="how-icon how-icon-blue" aria-hidden="true">&#x1F4CA;</div>
+          <h3 class="how-card-title">Explore Data</h3>
+          <p class="how-card-text">Browse results on an interactive table, filter by country, and download datasets.</p>
+        </div>
+        <div class="how-card-connector" aria-hidden="true">
+          <svg width="24" height="14" viewBox="0 0 24 14" fill="none"><path d="M0 7h18m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="how-card">
+          <span class="how-step-number" aria-hidden="true">4</span>
+          <div class="how-icon how-icon-yellow" aria-hidden="true">&#x2728;</div>
+          <h3 class="how-card-title">AI Summary</h3>
+          <p class="how-card-text">Get AI-generated insights into document content to understand what's inside without downloading it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="navbar-logo">
+                <img src="assets/images/logo_xs.png" alt="AIDEEU logo" width="20" height="20">
+              </div>
+              <span class="footer-brand-name">AIDE<span class="navbar-title-eu">EU</span></span>
+            </div>
+            <p class="footer-desc">Making EU public data accessible to everyone. Powered by Azure AI Agent Service to intelligently search, refine, and deliver datasets from across European institutions.</p>
+          </div>
+          <div class="footer-tech">
+            <p class="footer-tech-label">Resources</p>
+            <div class="footer-badges">
+              <a href="https://data.europa.eu" target="_blank" rel="noopener" class="footer-badge footer-badge-link">EU Data Portal</a>
+              <a href="#how-it-works" class="footer-badge footer-badge-link">How It Works</a>
+            </div>
+            <p class="footer-hackathon">Microsoft AI Dev Days Hackathon 2026</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2026 AIDEEU. Built for the Microsoft AI Dev Days Hackathon by Inari Solutions Sp z o.o.. This is demo code and not intended for production use.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ========== APP VIEW (hidden initially, shown after first search) ========== -->
+  <div id="appView" class="app-view app-view-hidden">
+    <nav class="navbar navbar-app">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">
+            <img src="assets/images/logo_xs.png" alt="AIDEE logo" width="32" height="32">
+          </div>
+          <span class="navbar-title">AI Data Explorer <span class="navbar-title-eu">EU</span></span>
+        </a>
+        <button id="backToLanding" type="button" class="nav-link back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          New Search
+        </button>
+      </div>
+    </nav>
+
+    <main class="app-shell">
+      <nav id="progressStepper" class="stepper" aria-label="Progress">
+        <ol class="stepper-list">
+          <li class="stepper-step stepper-step--upcoming" data-step="1">
+            <span class="stepper-icon how-icon-blue" aria-hidden="true">&#x1F4AC;</span>
+            <span class="stepper-label">Ask Naturally</span>
+          </li>
+          <li class="stepper-connector"></li>
+          <li class="stepper-step stepper-step--upcoming" data-step="2">
+            <span class="stepper-icon how-icon-yellow" aria-hidden="true">&#x26A1;</span>
+            <span class="stepper-label">AI Refine</span>
+          </li>
+          <li class="stepper-connector"></li>
+          <li class="stepper-step stepper-step--upcoming" data-step="3">
+            <span class="stepper-icon how-icon-blue" aria-hidden="true">&#x1F4CA;</span>
+            <span class="stepper-label">Explore Data</span>
+          </li>
+          <li class="stepper-connector"></li>
+          <li class="stepper-step stepper-step--upcoming" data-step="4">
+            <span class="stepper-icon how-icon-yellow" aria-hidden="true">&#x2728;</span>
+            <span class="stepper-label">AI Summary</span>
+          </li>
+        </ol>
+      </nav>
+
+      <section id="inputSection" class="input-bar-wrapper">
+        <form id="chatForm" class="chat-bar">
+          <div class="search-icon">
+            <img src="assets/images/logo_xs.png" alt="AIDEE" width="38" height="38">
+          </div>
+          <input id="messageInput" class="chat-input" placeholder="Type anything — ask, explore, compare...">
+          <button id="sendBtn" type="submit" class="chat-ask-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Ask
+          </button>
+        </form>
+      </section>
+
+      <section id="questionEcho" class="question-echo reply-hidden">
+        <span class="question-echo-label">You said</span>
+        <p id="questionEchoText" class="question-echo-text"></p>
+      </section>
+
+      <section id="replySection" class="reply-card reply-hidden" aria-live="polite">
+        <div class="reply-header">
+          <span class="reply-sender">AIDE<span class="reply-sender-eu">EU</span> Agent</span>
+        </div>
+        <div id="replyContent" class="reply-body"></div>
+      </section>
+
+      <section id="resultsSection" class="results-section results-hidden">
+        <div class="results-bar">
+          <span id="resultsMeta" class="results-count"></span>
+          <div id="sortPills" class="sort-pills">
+            <button type="button" class="sort-pill" data-sort-key="title">Title</button>
+            <button type="button" class="sort-pill" data-sort-key="publisher">Publisher</button>
+          </div>
+        </div>
+        <div id="resultsCards" class="results-cards-grid"></div>
+      </section>
+
+      <section id="filtersWrapper" class="filters-card filters-hidden">
+        <h3 class="filters-heading">Filters</h3>
+        <p class="filters-hint">You can use these filters to narrow down the results.</p>
+        <div id="filtersSection"></div>
+        <div class="filters-actions">
+          <button id="applyFiltersBtn" type="button" class="apply-filters-btn">Apply filters</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
